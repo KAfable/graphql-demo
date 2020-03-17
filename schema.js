@@ -7,6 +7,10 @@ const typeDefs = gql`
     getBooks: [Book]!
   }
 
+  type Mutation {
+    createAuthor(name: String): Author
+  }
+
   # Scalar types
   type Book {
     id: ID!
