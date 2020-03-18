@@ -5,10 +5,11 @@ const typeDefs = gql`
     hello: String
     # get all the books in my database and those in Congress
     getBooks: [Book]!
+    author(id: ID!): Author
   }
 
   type Mutation {
-    createAuthor(name: String): Author
+    createAuthor(firstName: String, age: Int): Author
   }
 
   # Scalar types
@@ -31,6 +32,7 @@ const typeDefs = gql`
     id: ID!
     books: [Book]!
     firstName: String
+    age: Int
   }
 `;
 
