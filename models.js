@@ -6,13 +6,18 @@ class Model {
   }
 
   // rest of the methods are database access methods
-  // object with the appropriate key value traits
   add(item) {
     return db(this.tableName).insert(item);
   }
+
+  find(id) {
+    return db(this.tableName)
+      .where({ id })
+      .first();
+  }
 }
 
-books = new Model("books");
-authors = new Model("authors");
+const books = new Model("books");
+const authors = new Model("authors");
 
 module.exports = { books, authors };
